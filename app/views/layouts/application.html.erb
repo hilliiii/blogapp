@@ -18,10 +18,16 @@
   </head>
 
   <body>
-  <p>ここにヘッダーを書いたり</p>
-  <p>共通で使うものをここに定義する</p>
+      <header class="header">
+      <p class="header_pageTitle">新着記事</p>
+      <div class="dropdown">
+        <%= image_tag 'default-avatar.png', class: 'header_avatar dropbtn' %>
+        <div class="dropdown-content">
+          <a href="#">プロフィール</a>
+          <a href="#">ログアウト</a>
+        </div>
+      </div>
+    </header>
     <%= yield %>
-    <p>yieldは他のerbファイルを読み込んだりする</p>
-    <p>ここにフッターを書いたりする</p>
   </body>
 </html>
