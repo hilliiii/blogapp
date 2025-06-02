@@ -58,3 +58,4 @@ end
 
 # 追加
 gem "sassc-rails"
+gem "faker"
