@@ -16,13 +16,19 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <%= javascript_importmap_tags %>
 
   </head>
 
   <body>
       <header class="header">
-      <p class="header_pageTitle">新着記事</p>
+      <div class="header_logos">
+        <% if !current_page?(root_path) %>
+          <%= link_to :back do %>
+            <%= image_tag 'back.svg', class: 'header_back' %>
+          <% end %>
+        <% end %>
+        <p class="header_pageTitle">Blogapp</p>
+      </div>
       <div class="dropdown">
         <%= image_tag 'default-avatar.png', class: 'header_avatar dropbtn' %>
         <div class="dropdown-content">
