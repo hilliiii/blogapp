@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.2", ">= 7.2.2.1"
@@ -25,6 +25,13 @@ gem "jbuilder"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
+# 追加
+gem 'faker'
+gem 'annotate'
+gem 'hamlit'
+gem 'better_errors'
+gem 'binding_of_caller'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
@@ -42,12 +49,20 @@ group :development, :test do
   gem "brakeman", require: false
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
-  gem "rubocop-rails-omakase", require: false
+  # gem "rubocop-rails-omakase", require: false 今回はデフォルトのこっちは使わない。
+  gem 'rubocop-rails'
+
+  # 追加
+  gem 'pry-byebug'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  # 追加
+  gem 'haml-rails'
+  gem 'html2haml'
 end
 
 group :test do
@@ -57,6 +72,6 @@ group :test do
 end
 
 # 追加
-gem "sassc-rails"
-gem "faker"
-gem "importmap-rails"
+gem 'importmap-rails'
+gem 'sassc-rails'
+
