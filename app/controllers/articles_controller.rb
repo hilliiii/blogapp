@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:show, :edit, :update]
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
     def index
         # indexという名前のメソッドはactionとも言い、CRUDに対応したメソッド。
         # indexは、何かの一覧を表示するという意味で使う。
