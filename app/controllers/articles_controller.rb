@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
     end
 
     def show
-        @user_id = current_user.id
+        @comments = @article.comments
     end
 
     def new
