@@ -14,6 +14,8 @@
 #  index_articles_on_user_id  (user_id)
 #
 class Article < ApplicationRecord
+    has_one_attached :eye_catch
+
     validates :title, presence: true
     validates :title, length: { minimum: 2, maximum: 100 }
     validates :title, format: { with: /\A(?!\@)/ }
@@ -25,6 +27,7 @@ class Article < ApplicationRecord
     validate :validate_title_and_content_length
 
     has_many :comments, dependent: :destroy
+    has_many :likes, dependent: :destroy
     belongs_to :user
 
     def display_created_at
@@ -40,5 +43,9 @@ class Article < ApplicationRecord
         unless char_length >= 100
             errors.add(:content, '100文字以上じゃないとダメだよ')
         end
+    end
+
+    def like_count
+        likes.count
     end
 end

@@ -49,7 +49,7 @@ class ArticlesController < ApplicationController
     private
     def article_params
         # このメソッドの名前はルールで決まってる。更新するモデルの名前_params
-        params.require(:article).permit(:title, :content)
+        params.require(:article).permit(:title, :content, :eye_catch)
     end
 
     def set_article
