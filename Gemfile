@@ -75,5 +75,5 @@ end
 # 追加
 gem 'importmap-rails'
 gem 'sassc-rails'
-
 gem "devise", "~> 4.9"
+gem 'aws-sdk-s3', require: false
