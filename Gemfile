@@ -54,6 +54,7 @@ group :development, :test do
 
   # 追加
   gem 'pry-byebug'
+  gem 'dotenv-rails'
 end
 
 group :development do
