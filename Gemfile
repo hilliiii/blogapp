@@ -5,7 +5,11 @@ gem 'rails', '~> 7.2.2', '>= 7.2.2.1'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '>= 1.4'
+# gem 'sqlite3', '>= 1.4'
+
+# SQLiteから変更
+gem 'pg', '>= 0.18', '< 2.0'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
@@ -54,6 +58,7 @@ group :development, :test do
 
   # 追加
   gem 'pry-byebug'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -74,5 +79,5 @@ end
 # 追加
 gem 'importmap-rails'
 gem 'sassc-rails'
-
 gem "devise", "~> 4.9"
+gem 'aws-sdk-s3', require: false
